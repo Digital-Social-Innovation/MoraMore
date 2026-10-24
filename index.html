@@ -135,7 +135,7 @@
 <header class="docked full-width top-0 sticky z-50 dew-glass transition-all duration-200">
 <div class="flex justify-between items-center w-full px-space-md md:px-margin max-w-7xl mx-auto h-16">
 <!-- Leading Menu Trigger -->
-<button aria-label="Open Navigation Menu" class="p-space-xs text-primary hover:text-secondary transition-colors duration-200 active:scale-95 flex items-center justify-center" type="button">
+<button aria-label="Open Navigation Menu" aria-expanded="false" id="menuToggle" class="p-space-xs text-primary hover:text-secondary transition-colors duration-200 active:scale-95 flex items-center justify-center" type="button">
 <span class="material-symbols-outlined" data-icon="menu">menu</span>
 </button>
 <!-- MoraMore Brand Logo Anchor -->
@@ -145,10 +145,14 @@
           MoraMore
         </span>
 </a>
-<!-- Trailing Cart Bag -->
-    <button aria-label="Cart" class="relative p-space-xs text-primary hover:text-secondary transition-colors duration-200 active:scale-95 flex items-center justify-center" type="button">
-</button>
 </div>
+<nav id="mobileMenu" class="hidden px-space-md py-3 border-t border-outline-variant/30 bg-surface" aria-label="Main navigation">
+<div class="max-w-7xl mx-auto flex flex-col gap-3">
+<a class="text-primary" href="#menu">Products &amp; Services</a>
+<a class="text-primary" href="#story">Our Story</a>
+<a class="text-primary" href="https://wa.me/27790523612" target="_blank" rel="noopener noreferrer">Contact / Order</a>
+</div>
+</nav>
 </header>
 <!-- MAIN CANVAS -->
 <main class="flex-grow flex flex-col">
@@ -171,7 +175,7 @@
         </p>
 <!-- Value Proposition -->
 <p class="font-body-md text-body-md md:font-body-lg md:text-body-lg text-on-surface-variant max-w-lg mb-space-lg">
-          Affordable, organic energy boosters &amp; healthy beverages handcrafted for students, busy professionals, and wellness seekers on the go.
+          Affordable Moringa smoothies, refreshing iced tea, and fresh fruit kabobs made for your day.
         </p>
 <!-- CTAs -->
 <div class="flex flex-col sm:flex-row items-center gap-space-sm w-full sm:w-auto">
@@ -188,12 +192,12 @@
 <div class="mt-space-lg flex items-center gap-4 py-2 px-4 rounded-full bg-surface-container border border-outline-variant/30">
 <div class="flex items-center gap-1.5">
 <span class="w-2.5 h-2.5 rounded-full bg-secondary animate-pulse"></span>
-<span class="font-label-md text-label-md text-on-surface-variant">Cold-Pressed Daily</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Freshly Prepared</span>
 </div>
 <span class="text-outline-variant">|</span>
 <div class="flex items-center gap-1.5">
 <span class="material-symbols-outlined text-primary text-sm" data-icon="bolt">bolt</span>
-<span class="font-label-md text-label-md text-on-surface-variant">Clean Moringa Power</span>
+<span class="font-label-md text-label-md text-on-surface-variant">Moringa Goodness</span>
 </div>
 </div>
 </div>
@@ -204,99 +208,95 @@
 <span class="font-label-tag text-label-tag uppercase tracking-widest text-secondary mb-space-xs block">Handcrafted Vitality</span>
 <h2 class="font-headline-md text-headline-md text-primary tracking-tight">Signature Organic Blends</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-2">
-          Nutrient-dense elixirs formulated with raw moringa, organic superfoods, and zero refined sugars.
+          All MoraMore smoothies contain 2g of 100% Moringa leaf powder as a base. Moringa is nutrient-filled and supports energy and immunity.
         </p>
 </div>
 <!-- Bento Product Grid -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
-<!-- PRODUCT 1: Immune boost moringa -->
 <article class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden flex flex-col justify-between group hover:shadow-lg transition-all duration-300">
 <div>
 <div class="relative bg-surface-container-low p-4 overflow-hidden flex items-center justify-center aspect-[4/5]">
-<span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-tag text-label-tag tracking-wider uppercase">
-                Bestseller
-              </span>
-<span class="absolute top-3 right-3 z-10 px-2.5 py-1 rounded-full bg-surface-container text-primary font-label-tag text-label-tag tracking-wider uppercase border border-outline-variant/30">
-                100% Organic
-              </span>
-<img alt="Immune boost moringa smoothie with bananas and diced mango on top" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsjbuLVDu7-bYsP0n0_sZtWfOHdN2Xt9y_4JUP2OUdRmFP9gNGve1-0nx-wJEY-M0E_ApTA5exl6bgxTVdXz7NrN12dm4wijwEQw55pGsTW2Mj1izScroZtHKTrRTKZgmLfWEzW7yA_ubhJPUfMyFdVQPbrb-yAaNpW76oA24BsBQC_kMzNzJvHymN8QTHIJa8w6Virsex7HkymG-25xnbTXBeg4Uac2uW6647Mg4YOMyovmuIJ_lU5P0X5BGUyZYNJPc">
+<span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-tag text-label-tag tracking-wider uppercase">Berry Blend</span>
+<img alt="Berry glow Moringa smoothie with strawberries and blueberries" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARrXKPiP2AWCq5rj35TkmWcYW0bBcgG0QiXU7gxl72QABvAX_R9CtZ1mPwpztgSE3itLe_DNH2NbZaB6lIuWidxxhQRiEFO6QdojKfCDtY8mTdNPonQuMm6BdZMnv1vDEm2Lml2L21XqBhcOLU2UM0GLGcDgcAbVkyr9vfPCj_yEMUgsEOmSKF3aclFNeCsAHWZadN3lVyRM15hk-QtHxGVnKvhFEClQa0r2ZjC1DiM-kDUg4zmOfo1Bz6J5-umj3KTnk">
 </div>
 <div class="p-space-md">
-<div class="flex justify-between items-baseline mb-1">
-<h3 class="font-headline-sm text-headline-sm text-primary tracking-tight">Immune boost moringa</h3>
-<span class="font-title-lg text-title-lg text-primary font-bold">$5.50</span>
-</div>
-<p class="font-label-md text-label-md text-secondary mb-space-sm">Moringa • Banana • Golden Mango</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
-                Potent organic moringa leaf blended with creamy banana, golden mango, and natural nectar for sustained vitality and gut health.
-              </p>
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-tight mb-1">Berry glow-Moringa</h3>
+<p class="font-label-md text-label-md text-secondary mb-space-sm">Moringa powder • Strawberries • Blueberries • Honey • Yoghurt</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Rich in vitamin C, calcium, protein and iron.</p>
+<p class="font-title-lg text-title-lg text-primary font-bold">R20 (250ml) / R35 (500ml)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Size: 250ml / 500ml</p>
 </div>
 </div>
 <div class="p-space-md pt-0">
-<button class="w-full py-2.5 px-4 rounded-full bg-surface-container hover:bg-primary-container hover:text-on-primary text-primary border border-outline-variant/40 font-label-lg text-label-lg transition-all duration-200 active:scale-98 flex items-center justify-center gap-2" type="button">
-<span class="material-symbols-outlined text-sm" data-icon="add_circle">add_circle</span>
-<span class="">Add to Order</span>
-</button>
+<a class="w-full py-2.5 px-4 rounded-full bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg transition-all duration-200 flex items-center justify-center gap-2" href="https://wa.me/27790523612?text=Hi%20MoraMore%20Essence%21%20I%27d%20like%20to%20order%20Berry%20glow-Moringa.%20Please%20confirm%20the%20size%20%28250ml%20or%20500ml%29." target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-sm">chat</span><span>Order via WhatsApp</span>
+</a>
 </div>
 </article>
-<!-- PRODUCT 2: Iced-mora tea -->
 <article class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden flex flex-col justify-between group hover:shadow-lg transition-all duration-300">
 <div>
 <div class="relative bg-surface-container-low p-4 overflow-hidden flex items-center justify-center aspect-[4/5]">
-<span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full bg-secondary text-on-secondary font-label-tag text-label-tag tracking-wider uppercase">
-                Refreshing Boost
-              </span>
-<img alt="Iced-mora tea with mint leaves, fresh lime slices, and matcha moringa powder" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDYFg2kQIitG4KE_gLG37rDxR4ace8KInXnq4NQrM3rxoZWVkwT4Etr_no5G8ZGoySVF4m7l3denZ1Hfp4k8ozxatl4SQSBlvAlZ-6klJzA7_TTN4RVAT-h0nVLsU1ZH5wu-GEGefcgnlSWUX_ejLaXFQ6U5aKs_5YmyKnjAyHIWNytuVNu1LTHsTDLRzEUcB5fhIMZJjELF6HX2uzynC2Z2MtA88upXUVifA8GBGleseTQe0TXsF5WnnMh23Xu4hZEKw">
+<span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-tag text-label-tag tracking-wider uppercase">Immune Support</span>
+<img alt="Immune boost Moringa smoothie with orange and pineapple" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsjbuLVDu7-bYsP0n0_sZtWfOHdN2Xt9y_4JUP2OUdRmFP9gNGve1-0nx-wJEY-M0E_ApTA5exl6bgxTVdXz7NrN12dm4wijwEQw55pGsTW2Mj1izScroZtHKTrRTKZgmLfWEzW7yA_ubhJPUfMyFdVQPbrb-yAaNpW76oA24BsBQC_kMzNzJvHymN8QTHIJa8w6Virsex7HkymG-25xnbTXBeg4Uac2uW6647Mg4YOMyovmuIJ_lU5P0X5BGUyZYNJPc">
 </div>
 <div class="p-space-md">
-<div class="flex justify-between items-baseline mb-1">
-<h3 class="font-headline-sm text-headline-sm text-primary tracking-tight">Iced-mora tea</h3>
-<span class="font-title-lg text-title-lg text-primary font-bold">$4.75</span>
-</div>
-<p class="font-label-md text-label-md text-secondary mb-space-sm">Moringa Essence • Crisp Lime • Crushed Mint</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
-                Crisp, refreshing iced green tea infused with moringa essence, zesty fresh limes, and crushed mint. Zero crash, pure botanical clarity.
-              </p>
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-tight mb-1">Immune boost-Moringa</h3>
+<p class="font-label-md text-label-md text-secondary mb-space-sm">Moringa powder • Orange • Ginger • Pineapple • Water</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Vitamin A supports mucous membranes; iron and zinc help immune-cell growth. Contains 46 antioxidants that fight free radicals that weaken immunity.</p>
+<p class="font-title-lg text-title-lg text-primary font-bold">R20 (250ml) / R35 (500ml)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Size: 250ml / 500ml</p>
 </div>
 </div>
 <div class="p-space-md pt-0">
-<button class="w-full py-2.5 px-4 rounded-full bg-surface-container hover:bg-primary-container hover:text-on-primary text-primary border border-outline-variant/40 font-label-lg text-label-lg transition-all duration-200 active:scale-98 flex items-center justify-center gap-2" type="button">
-<span class="material-symbols-outlined text-sm" data-icon="add_circle">add_circle</span>
-<span class="">Add to Order</span>
-</button>
+<a class="w-full py-2.5 px-4 rounded-full bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg transition-all duration-200 flex items-center justify-center gap-2" href="https://wa.me/27790523612?text=Hi%20MoraMore%20Essence%21%20I%27d%20like%20to%20order%20Immune%20boost-Moringa.%20Please%20confirm%20the%20size%20%28250ml%20or%20500ml%29." target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-sm">chat</span><span>Order via WhatsApp</span>
+</a>
 </div>
 </article>
-<!-- PRODUCT 3: Berry glow Moringa -->
 <article class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden flex flex-col justify-between group hover:shadow-lg transition-all duration-300">
 <div>
 <div class="relative bg-surface-container-low p-4 overflow-hidden flex items-center justify-center aspect-[4/5]">
-<span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full bg-tertiary-container text-tertiary-fixed font-label-tag text-label-tag tracking-wider uppercase">
-                Antioxidant Rich
-              </span>
-<img alt="Berry glow Moringa smoothie topped with fresh sliced strawberries, blueberries, and chia seeds" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARrXKPiP2AWCq5rj35TkmWcYW0bBcgG0QiXU7gxl72QABvAX_R9CtZ1mPwpztgSE3itLe_DNH2NbZaB6lIuWidxxhQRiEFO6QdojKfCDtY8mTdNPonQuMm6BdZMnv1vDEm2Lml2L21XqBhcOLU2UM0GLGcDgcAbVkyr9vfPCj_yEMUgsEOmSKF3aclFNeCsAHWZadN3lVyRM15hk-QtHxGVnKvhFEClQa0r2ZjC1DiM-kDUg4zmOfo1Bz6J5-umj3KTnk">
+<span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-tag text-label-tag tracking-wider uppercase">Refreshing</span>
+<img alt="Iced rooibos tea with mint and lemon" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDYFg2kQIitG4KE_gLG37rDxR4ace8KInXnq4NQrM3rxoZWVkwT4Etr_no5G8ZGoySVF4m7l3denZ1Hfp4k8ozxatl4SQSBlvAlZ-6klJzA7_TTN4RVAT-h0nVLsU1ZH5wu-GEGefcgnlSWUX_ejLaXFQ6U5aKs_5YmyKnjAyHIWNytuVNu1LTHsTDLRzEUcB5fhIMZJjELF6HX2uzynC2Z2MtA88upXUVifA8GBGleseTQe0TXsF5WnnMh23Xu4hZEKw">
 </div>
 <div class="p-space-md">
-<div class="flex justify-between items-baseline mb-1">
-<h3 class="font-headline-sm text-headline-sm text-primary tracking-tight">Berry glow Moringa</h3>
-<span class="font-title-lg text-title-lg text-primary font-bold">$5.75</span>
-</div>
-<p class="font-label-md text-label-md text-secondary mb-space-sm">Wild Blueberries • Strawberries • Chia • Moringa</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
-                Antioxidant powerhouse combining wild blueberries, sweet strawberries, chia seeds, and raw moringa for radiant skin and sustained clean energy.
-              </p>
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-tight mb-1">Iced tea</h3>
+<p class="font-label-md text-label-md text-secondary mb-space-sm">Water • Rooibos • Mint • Ice cubes • Moringa leaf powder • Honey • Lemon juice</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Hydration, antioxidants, focus without a caffeine crash, and support for digestion and detox.</p>
+<p class="font-title-lg text-title-lg text-primary font-bold">R20 (250ml) / R35 (500ml)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Size: 250ml / 500ml</p>
 </div>
 </div>
 <div class="p-space-md pt-0">
-<button class="w-full py-2.5 px-4 rounded-full bg-surface-container hover:bg-primary-container hover:text-on-primary text-primary border border-outline-variant/40 font-label-lg text-label-lg transition-all duration-200 active:scale-98 flex items-center justify-center gap-2" type="button">
-<span class="material-symbols-outlined text-sm" data-icon="add_circle">add_circle</span>
-<span class="">Add to Order</span>
-</button>
+<a class="w-full py-2.5 px-4 rounded-full bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg transition-all duration-200 flex items-center justify-center gap-2" href="https://wa.me/27790523612?text=Hi%20MoraMore%20Essence%21%20I%27d%20like%20to%20order%20Iced%20tea.%20Please%20confirm%20the%20size%20%28250ml%20or%20500ml%29." target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-sm">chat</span><span>Order via WhatsApp</span>
+</a>
+</div>
+</article>
+<article class="bg-surface-container-lowest rounded-xl border border-outline-variant/30 overflow-hidden flex flex-col justify-between group hover:shadow-lg transition-all duration-300">
+<div>
+<div class="relative bg-surface-container-low p-4 overflow-hidden flex items-center justify-center aspect-[4/5]">
+<span class="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full bg-primary-container text-on-primary font-label-tag text-label-tag tracking-wider uppercase">Fruit Kabobs</span>
+<img alt="Fresh fruit kabobs with pineapple, strawberry and kiwi" class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARrXKPiP2AWCq5rj35TkmWcYW0bBcgG0QiXU7gxl72QABvAX_R9CtZ1mPwpztgSE3itLe_DNH2NbZaB6lIuWidxxhQRiEFO6QdojKfCDtY8mTdNPonQuMm6BdZMnv1vDEm2Lml2L21XqBhcOLU2UM0GLGcDgcAbVkyr9vfPCj_yEMUgsEOmSKF3aclFNeCsAHWZadN3lVyRM15hk-QtHxGVnKvhFEClQa0r2ZjC1DiM-kDUg4zmOfo1Bz6J5-umj3KTnk">
+</div>
+<div class="p-space-md">
+<h3 class="font-headline-sm text-headline-sm text-primary tracking-tight mb-1">Fruit kabobs</h3>
+<p class="font-label-md text-label-md text-secondary mb-space-sm">Pineapple • Strawberry • Kiwi</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Fresh fruit kabobs available individually or as a combo.</p>
+<p class="font-title-lg text-title-lg text-primary font-bold">R50 (combo) / R15 (one kabob)</p>
+
+</div>
+</div>
+<div class="p-space-md pt-0">
+<a class="w-full py-2.5 px-4 rounded-full bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg transition-all duration-200 flex items-center justify-center gap-2" href="https://wa.me/27790523612?text=Hi%20MoraMore%20Essence%21%20I%27d%20like%20to%20order%20fruit%20kabobs.%20Please%20confirm%20combo%20%28R50%29%20or%20one%20kabob%20%28R15%29." target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-sm">chat</span><span>Order via WhatsApp</span>
+</a>
 </div>
 </article>
 </div>
 </section>
 <!-- MORAMORE MISSION & STORY (Addressing the Gap) -->
-<section class="bg-surface-container-low py-space-xl border-y border-outline-variant/30">
+<section id="story" class="bg-surface-container-low py-space-xl border-y border-outline-variant/30">
 <div class="px-space-md md:px-margin max-w-7xl mx-auto">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-space-lg items-center mb-space-lg">
 <div class="md:col-span-6">
@@ -308,7 +308,7 @@
               Crafted to Balance Hectic Schedules &amp; Real Budgets.
             </h2>
 <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-              MoraMore was born to bridge a real everyday dilemma: healthy, restorative superfood beverages were either priced like luxury skincare or replaced with sugary, processed quick-fixes. We set out to change that—delivering high-vitality botanical nutrition that respects your daily pocketbook.
+              MoraMore Essence offers affordable Moringa smoothies, iced tea, and fruit kabobs for everyday refreshment.
             </p>
 </div>
 <!-- Emblem Quote Card -->
@@ -321,7 +321,7 @@
                 “First sip fresh, last sip stay fresh.”
               </p>
 <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                Our uncompromising standard: raw integrity from prep bench to your final lecture or meeting.
+                Fresh flavours made for your everyday moments.
               </p>
 </div>
 </div>
@@ -364,87 +364,22 @@
 <div class="max-w-2xl">
 <span class="font-label-tag text-label-tag uppercase tracking-widest text-secondary-fixed mb-space-xs block">Botanical Science</span>
 <h2 class="font-headline-md md:font-headline-lg text-headline-md md:text-headline-lg mb-space-sm text-white">
-            The Power of Moringa &amp; Fresh Botanicals
+            The Goodness of Moringa &amp; Fresh Ingredients
           </h2>
 <p class="font-body-md text-body-md text-on-primary-container mb-space-lg leading-relaxed">
-            Known historically as the “Miracle Tree”, Moringa oleifera packs 7x the Vitamin C of oranges, 4x the Vitamin A of carrots, and 4x the calcium of milk. Paired with fresh cold-pressed fruits, it delivers bioactive antioxidant defense and sustained oxygen flow.
+            All MoraMore smoothies contain 2g of 100% Moringa leaf powder as a base. Moringa is nutrient-filled, supports energy and immunity, and is part of our everyday blends.
           </p>
-<div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-<div class="border border-outline-variant/30 rounded-lg p-3 bg-white/5">
-<span class="font-headline-sm text-headline-sm text-secondary-fixed block">46+</span>
-<span class="font-label-tag text-label-tag uppercase text-on-primary-container">Antioxidants</span>
-</div>
-<div class="border border-outline-variant/30 rounded-lg p-3 bg-white/5">
-<span class="font-headline-sm text-headline-sm text-secondary-fixed block">27%</span>
-<span class="font-label-tag text-label-tag uppercase text-on-primary-container">Plant Protein</span>
-</div>
-<div class="border border-outline-variant/30 rounded-lg p-3 bg-white/5">
-<span class="font-headline-sm text-headline-sm text-secondary-fixed block">0g</span>
-<span class="font-label-tag text-label-tag uppercase text-on-primary-container">Added Sugars</span>
-</div>
-<div class="border border-outline-variant/30 rounded-lg p-3 bg-white/5">
-<span class="font-headline-sm text-headline-sm text-secondary-fixed block">100%</span>
-<span class="font-label-tag text-label-tag uppercase text-on-primary-container">Raw Leaf</span>
-</div>
-</div>
 </div>
 </div>
 </section>
-<!-- SOCIAL PROOF / COMMUNITY REVIEWS -->
+<!-- PRODUCT PROMISE -->
 <section class="py-space-xl px-space-md md:px-margin max-w-7xl mx-auto w-full">
-<div class="text-center max-w-xl mx-auto mb-space-lg">
-<span class="font-label-tag text-label-tag uppercase tracking-widest text-secondary block mb-1">Real Experiences</span>
-<h2 class="font-headline-md text-headline-md text-primary">Loved by Our Daily Community</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
-<!-- Review 1 -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant/30 flex flex-col justify-between">
-<p class="font-body-md text-body-md text-on-surface-variant italic mb-space-md">
-            “The Immune Boost Moringa got me through midterm season without catching the usual campus bug. Best $5.50 I spend all week.”
-          </p>
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-primary font-bold">
-              SL
-            </div>
-<div>
-<p class="font-title-md text-title-md text-primary">Sarah Lin</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Biochemistry Undergrad</p>
-</div>
-</div>
-</div>
-<!-- Review 2 -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant/30 flex flex-col justify-between">
-<p class="font-body-md text-body-md text-on-surface-variant italic mb-space-md">
-            “Iced-mora tea replaced my double-shot iced espresso. Crisp, sharp mental clarity without the 3 PM heart racing and shakiness.”
-          </p>
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-primary font-bold">
-              MA
-            </div>
-<div>
-<p class="font-title-md text-title-md text-primary">Marcus Adebayo</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Product Designer</p>
-</div>
-</div>
-</div>
-<!-- Review 3 -->
-<div class="bg-surface-container-lowest p-space-md rounded-xl border border-outline-variant/30 flex flex-col justify-between">
-<p class="font-body-md text-body-md text-on-surface-variant italic mb-space-md">
-            “Berry glow gives my clients an actual clean recovery blend with natural electrolytes. Plus, MoraMore’s tagline never lies—stays crisp to the last sip.”
-          </p>
-<div class="flex items-center gap-3">
-<div class="w-10 h-10 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-primary font-bold">
-              EC
-            </div>
-<div>
-<p class="font-title-md text-title-md text-primary">Elena Cruz</p>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Pilates &amp; HIIT Instructor</p>
-</div>
-</div>
-</div>
+<div class="text-center max-w-xl mx-auto">
+<span class="font-label-tag text-label-tag uppercase tracking-widest text-secondary block mb-1">MoraMore Essence</span>
+<h2 class="font-headline-md text-headline-md text-primary">Fresh Choices for Every Day</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Choose your favourite smoothie, iced tea, or fruit kabob, then place your order directly through WhatsApp.</p>
 </div>
 </section>
-<!-- SPECIAL OFFER BANNER -->
 <!-- DEDICATED CALL TO ACTION SECTION -->
 <section class="px-space-md md:px-margin py-space-xl max-w-7xl mx-auto w-full">
   <div class="bg-surface-container-lowest border border-secondary/20 rounded-2xl p-space-lg md:p-space-xl shadow-sm text-center relative overflow-hidden">
@@ -464,7 +399,7 @@
     <div class="flex flex-col sm:flex-row items-center justify-center gap-space-sm max-w-xl mx-auto mb-space-lg">
       <a class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-primary text-on-primary font-label-lg shadow-sm hover:bg-primary-container transition-all duration-200 active:scale-98 flex items-center justify-center gap-2.5" href="https://wa.me/27790523612?text=Hi%20MoraMore%20Essence!%20I'd%20like%20to%20order" target="_blank" rel="noopener noreferrer">
         <span class="material-symbols-outlined text-lg" data-icon="chat">chat</span>
-        <span class="">Order on WhatsApp (+27 79 052 3612)</span>
+        <span class="">Order via WhatsApp (+27 79 052 3612)</span>
       </a>
       <a class="w-full sm:w-auto px-8 py-3.5 rounded-full bg-surface-container text-primary border border-outline-variant/40 font-label-lg hover:bg-surface-container-low transition-all duration-200 active:scale-98 flex items-center justify-center" href="#menu">
         <span class="">Explore Our Drinks</span>
@@ -508,7 +443,7 @@
           </span>
 </div>
 <p class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant">
-          © 2025 MoraMore Essence. Cold-pressed vitality &amp; botanical care. All rights reserved.
+          © 2026 MoraMore Essence. Cold-pressed vitality &amp; botanical care. All rights reserved.
         </p>
 </div>
 <!-- Footer Navigation Links -->
@@ -533,4 +468,15 @@
       <span class="font-label-lg leading-tight font-semibold">WhatsApp (079 052 3612)</span>
     </div>
   </a>
-</aside></body></html>
+</aside><script>
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener('click', () => {
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+}
+</script>
+</body></html>
